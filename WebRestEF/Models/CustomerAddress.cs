@@ -11,22 +11,22 @@ public partial class CustomerAddress
 {
     [Key]
     [Column("CUSTOMER_ADDRESS_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string CustomerAddressId { get; set; } = null!;
 
     [Column("CUSTOMER_ADDRESS_CUSTOMER_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string CustomerAddressCustomerId { get; set; } = null!;
 
     [Column("CUSTOMER_ADDRESS_ADDRESS_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string CustomerAddressAddressId { get; set; } = null!;
 
     [Column("CUSTOMER_ADDRESS_ADDRESS_TYPE_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string CustomerAddressAddressTypeId { get; set; } = null!;
 

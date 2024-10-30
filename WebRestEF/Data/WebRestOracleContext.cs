@@ -39,7 +39,7 @@ public partial class WebRestOracleContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder
-            .HasDefaultSchema("LAB3")
+            .HasDefaultSchema("UD_ROGERMC")
             .UseCollation("USING_NLS_COMP");
 
         modelBuilder.Entity<Address>(entity =>
@@ -138,14 +138,6 @@ public partial class WebRestOracleContext : DbContext
             entity.Property(e => e.OrderStateCrtdId).ValueGeneratedOnAdd();
             entity.Property(e => e.OrderStateUpdtDt).ValueGeneratedOnAdd();
             entity.Property(e => e.OrderStateUpdtId).ValueGeneratedOnAdd();
-
-            entity.HasOne(d => d.OrderStateOrderStatus).WithMany(p => p.OrderStates)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("ORDER_STATE_FK2");
-
-            entity.HasOne(d => d.OrderStateOrders).WithMany(p => p.OrderStates)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("ORDER_STATE_FK1");
         });
 
         modelBuilder.Entity<OrderStatus>(entity =>

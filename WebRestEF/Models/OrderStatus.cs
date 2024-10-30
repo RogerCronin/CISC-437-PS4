@@ -11,7 +11,7 @@ public partial class OrderStatus
 {
     [Key]
     [Column("ORDER_STATUS_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string OrderStatusId { get; set; } = null!;
 
@@ -21,7 +21,7 @@ public partial class OrderStatus
     public string OrderStatusDesc { get; set; } = null!;
 
     [Column("ORDER_STATUS_NEXT_ORDER_STATUS_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string? OrderStatusNextOrderStatusId { get; set; }
 
@@ -43,9 +43,6 @@ public partial class OrderStatus
 
     [InverseProperty("OrderStatusNextOrderStatus")]
     public virtual ICollection<OrderStatus> InverseOrderStatusNextOrderStatus { get; set; } = new List<OrderStatus>();
-
-    [InverseProperty("OrderStateOrderStatus")]
-    public virtual ICollection<OrderState> OrderStates { get; set; } = new List<OrderState>();
 
     [ForeignKey("OrderStatusNextOrderStatusId")]
     [InverseProperty("InverseOrderStatusNextOrderStatus")]

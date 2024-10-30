@@ -11,17 +11,17 @@ public partial class OrderState
 {
     [Key]
     [Column("ORDER_STATE_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string OrderStateId { get; set; } = null!;
 
     [Column("ORDER_STATE_ORDERS_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string OrderStateOrdersId { get; set; } = null!;
 
     [Column("ORDER_STATE_ORDER_STATUS_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string OrderStateOrderStatusId { get; set; } = null!;
 
@@ -43,12 +43,4 @@ public partial class OrderState
 
     [Column("ORDER_STATE_UPDT_DT", TypeName = "DATE")]
     public DateTime OrderStateUpdtDt { get; set; }
-
-    [ForeignKey("OrderStateOrderStatusId")]
-    [InverseProperty("OrderStates")]
-    public virtual OrderStatus OrderStateOrderStatus { get; set; } = null!;
-
-    [ForeignKey("OrderStateOrdersId")]
-    [InverseProperty("OrderStates")]
-    public virtual Order OrderStateOrders { get; set; } = null!;
 }

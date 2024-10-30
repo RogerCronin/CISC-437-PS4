@@ -11,17 +11,17 @@ public partial class OrdersLine
 {
     [Key]
     [Column("ORDERS_LINE_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string OrdersLineId { get; set; } = null!;
 
     [Column("ORDERS_LINE_ORDERS_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string OrdersLineOrdersId { get; set; } = null!;
 
     [Column("ORDERS_LINE_PRODUCT_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string OrdersLineProductId { get; set; } = null!;
 

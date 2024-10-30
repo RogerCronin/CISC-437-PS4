@@ -11,7 +11,7 @@ public partial class AddressType
 {
     [Key]
     [Column("ADDRESS_TYPE_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string AddressTypeId { get; set; } = null!;
 

@@ -11,21 +11,21 @@ public partial class Address
 {
     [Key]
     [Column("ADDRESS_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string AddressId { get; set; } = null!;
 
-    [Column("ADDRESS_LINE1")]
+    [Column("ADDRESS_LINE_1")]
     [StringLength(50)]
     [Unicode(false)]
     public string AddressLine1 { get; set; } = null!;
 
-    [Column("ADDRESS_LINE2")]
+    [Column("ADDRESS_LINE_2")]
     [StringLength(50)]
     [Unicode(false)]
     public string? AddressLine2 { get; set; }
 
-    [Column("ADDRESS_LINE3")]
+    [Column("ADDRESS_LINE_3")]
     [StringLength(50)]
     [Unicode(false)]
     public string? AddressLine3 { get; set; }

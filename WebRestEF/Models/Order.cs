@@ -11,7 +11,7 @@ public partial class Order
 {
     [Key]
     [Column("ORDERS_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string OrdersId { get; set; } = null!;
 
@@ -39,9 +39,6 @@ public partial class Order
 
     [Column("ORDERS_UPDT_DT", TypeName = "DATE")]
     public DateTime OrdersUpdtDt { get; set; }
-
-    [InverseProperty("OrderStateOrders")]
-    public virtual ICollection<OrderState> OrderStates { get; set; } = new List<OrderState>();
 
     [ForeignKey("OrdersCustomerId")]
     [InverseProperty("Orders")]

@@ -11,7 +11,7 @@ public partial class Product
 {
     [Key]
     [Column("PRODUCT_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string ProductId { get; set; } = null!;
 
@@ -26,7 +26,7 @@ public partial class Product
     public string ProductDesc { get; set; } = null!;
 
     [Column("PRODUCT_PRODUCT_STATUS_ID")]
-    [StringLength(32)]
+    [StringLength(38)]
     [Unicode(false)]
     public string ProductProductStatusId { get; set; } = null!;
 
