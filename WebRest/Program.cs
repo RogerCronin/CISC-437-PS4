@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
 using WebRestEF.EF.Data;
 
@@ -11,6 +12,9 @@ builder.Services.AddDbContext<WebRestOracleContext>
     .UseLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()))
     );
 
+builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
 builder.Services.AddControllers();
 
